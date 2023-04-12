@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Favicon -->
+        <link
+            rel="shortcut icon"
+            href="assets/images/logo.jpg"
+            type="image/x-icon"
+        />
+        <!-- Offline fontawesome icons link-->
+        <link rel="stylesheet" href="assets/icons/css/all.css" />
+
+        <!-- Custom global stylesheet link -->
+        <link rel="stylesheet" href="CSS/style.css" />
+
+        <!-- Custom CSS link for form container -->
+        <link rel="stylesheet" href="CSS/login-signup.css" />
+        <title>Sign Up | UHA Online Marketing Business</title>
+    </head>
+    <body>
+        <div class="signup-container">
+            <div class="signup-left">
+                <div class="logo">
+                    <img src="assets/images/logo.jpg" alt="UHA logo" />
+                </div>
+                <div class="mobile-title">Welcome to UHA</div>
+                <!-- navigator -->
+                <div class="signup-navigator step-1" id="signup-navigator">
+                    <div>
+                        <span>1</span> <i class="fa-regular fa-check"></i>
+                    </div>
+                    <div>
+                        <span>2</span> <i class="fa-regular fa-check"></i>
+                    </div>
+                    <div>
+                        <span>3</span> <i class="fa-regular fa-check"></i>
+                    </div>
+                    <div>
+                        <span>4</span> <i class="fa-regular fa-check"></i>
+                    </div>
+                    <div>
+                        <span>5</span> <i class="fa-regular fa-check"></i>
+                    </div>
+                </div>
+                <!-- error and success messages shown as the user try to sign up -->
+                <div class="message d-none" id="alert-message">
+                    <i class="fa-regular fa-info-circle"></i>
+                    <i class="fa-regular fa-check-circle"></i>
+                    <span>Invalid Email or Password</span>
+                </div>
+                <!-- <div class="message success d-none">
+                    <span>Email and Password Verified</span>
+                </div> -->
+                <!-- ------ -->
+                <div class="signup-form">
+                    <div class="signup-forms step-1" id="signup-multiple-forms">
+                        <form class="form-1">
+                            <h1 class="form-title">Add Profesional Details</h1>
+                            <div
+                                class="profile-img-container"
+                                id="profile-img-container"
+                            >
+                                <div>
+                                    <div class="preview">
+                                        <div
+                                            class="img"
+                                            maleImgUrl="assets/images/male_img_avatar.png"
+                                            femaleImgUrl="assets/images/female_img_avatar.png"
+                                            style="
+                                                background-image: url(assets/images/male_img_avatar.png);
+                                            "
+                                        ></div>
+                                        <input
+                                            type="file"
+                                            id="profile-img"
+                                            accept="image/png, image/jpeg , image/jpg"
+                                        />
+                                        <label
+                                            for="profile-img"
+                                            title="Change Photo"
+                                        >
+                                            <i class="fas fa-camera"></i>
+                                        </label>
+                                    </div>
+                                    <div class="photo-actions">
+                                        <div class="remove-photo d-none">
+                                            Remove Photo
+                                        </div>
+                                        <label
+                                            for="profile-img"
+                                            class="change-photo"
+                                            >Change Photo</label
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="fName">
+                                    First Name <span>*</span></label
+                                >
+                                <input
+                                    type="text"
+                                    id="fName"
+                                    required
+                                    placeholder="Enter your first name"
+                                />
+                            </div>
+                            <div class="input-group">
+                                <label for="lName">
+                                    Last Name <span>*</span></label
+                                >
+                                <input
+                                    type="text"
+                                    id="lName"
+                                    required
+                                    placeholder="Enter your last name"
+                                />
+                            </div>
+                            <div class="custom-radio-container">
+                                <div>
+                                    <p>Select Gender <span>*</span></p>
+                                </div>
+                                <div class="radio-types">
+                                    <div>
+                                        <input
+                                            type="radio"
+                                            id="male"
+                                            name="gender"
+                                            required
+                                            checked
+                                        />
+                                        <label for="male">
+                                            <span></span>
+                                            <p>Male</p>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input
+                                            type="radio"
+                                            id="female"
+                                            name="gender"
+                                            required
+                                        />
+                                        <label for="female">
+                                            <span></span>
+                                            <p>Female</p>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="custom-radio-container">
+                                <div>
+                                    <p>Select Account <span>*</span></p>
+                                </div>
+                                <div class="radio-types">
+                                    <div>
+                                        <input
+                                            type="radio"
+                                            id="digital-marketing"
+                                            name="account-type"
+                                            required
+                                            checked
+                                        />
+                                        <label for="digital-marketing">
+                                            <span></span>
+                                            <p>Digital Marketing</p>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input
+                                            type="radio"
+                                            id="eCommerce"
+                                            name="account-type"
+                                            required
+                                        />
+                                        <label for="eCommerce">
+                                            <span></span>
+                                            <p>eCommerce</p>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="d-none"></button>
+                        </form>
+                        <form class="form-2">
+                            <h1 class="form-title">Where you pay?</h1>
+                            <div class="payment-warning">
+                                <i class="fa-regular fa-info-circle"></i>
+                                <p>
+                                    Make sure transaction with full fees,
+                                    Otherwise your fee will returned without
+                                    creating account.
+                                </p>
+                            </div>
+                            <div class="not-paid-layout">
+                                <label
+                                    for="toggle-not-paid"
+                                    class="open-container"
+                                    >Not paid yet?</label
+                                >
+                                <input
+                                    type="checkbox"
+                                    class="d-none"
+                                    id="toggle-not-paid"
+                                />
+                                <label
+                                    for="toggle-not-paid"
+                                    class="not-paid-overlay"
+                                ></label>
+                                <!-- checked -->
+                                <div class="not-paid-container">
+                                    <div>
+                                        <div class="paid-nav">
+                                            <div>
+                                                <input
+                                                    type="radio"
+                                                    checked
+                                                    name="paid-sections"
+                                                    id="jazzcash-section"
+                                                />
+                                                <label for="jazzcash-section"
+                                                    >JazzCash</label
+                                                >
+                                            </div>
+                                            <div>
+                                                <input
+                                                    type="radio"
+                                                    name="paid-sections"
+                                                    id="easypaisa-section"
+                                                />
+                                                <label for="easypaisa-section"
+                                                    >EasyPaisa</label
+                                                >
+                                            </div>
+                                            <div>
+                                                <input
+                                                    type="radio"
+                                                    name="paid-sections"
+                                                    id="banks-section"
+                                                />
+                                                <label for="banks-section"
+                                                    >Banks</label
+                                                >
+                                            </div>
+                                        </div>
+                                        <div class="paid-cote-container">
+                                            <div
+                                                class="payment-category jazzcash"
+                                            >
+                                                <div class="qr-code-img">
+                                                    <img
+                                                        src="assets/images/male_img_avatar.png"
+                                                        alt=""
+                                                    />
+                                                    <span>Scan QR Code</span>
+                                                </div>
+                                                <div class="other-details">
+                                                    <div class="detail">
+                                                        <b>Account Name:</b>
+                                                        <span
+                                                            >UHA OMB Pakistan
+                                                            (Jazz Cash)</span
+                                                        >
+                                                    </div>
+                                                    <div class="detail">
+                                                        <b>Till ID:</b>
+                                                        <span>04392328</span>
+                                                    </div>
+                                                    <div class="detail">
+                                                        <b>Phone Number:</b>
+                                                        <span>03001234567</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="payment-category easypaisa"
+                                            >
+                                                <div class="qr-code-img">
+                                                    <img
+                                                        src="assets/images/female_img_avatar.png"
+                                                        alt=""
+                                                    />
+                                                    <span>Scan QR Code</span>
+                                                </div>
+                                                <div class="other-details">
+                                                    <div class="detail">
+                                                        <b>Account Name:</b>
+                                                        <span
+                                                            >UHA OMB Pakistan
+                                                            (EasyPaisa)</span
+                                                        >
+                                                    </div>
+                                                    <div class="detail">
+                                                        <b>Till ID:</b>
+                                                        <span>59384752</span>
+                                                    </div>
+                                                    <div class="detail">
+                                                        <b>Phone Number:</b>
+                                                        <span>03758926103</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="payment-category banks">
+                                                <div
+                                                    class="banks-container custom-scroll"
+                                                >
+                                                    <div class="bank-details">
+                                                        <h3>
+                                                            1. Mezzan Bank
+                                                            Limited
+                                                        </h3>
+                                                        <div class="details">
+                                                            <div>
+                                                                <b
+                                                                    >Account
+                                                                    No:</b
+                                                                >
+                                                                <p>
+                                                                    0053485729104289347
+                                                                </p>
+                                                            </div>
+                                                            <div>
+                                                                <b
+                                                                    >Account
+                                                                    Name:</b
+                                                                >
+                                                                <p>
+                                                                    UHA OMB
+                                                                    Pakistan
+                                                                    (Mezan Bank)
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bank-details">
+                                                        <h3>
+                                                            1. Mezzan Bank
+                                                            Limited
+                                                        </h3>
+                                                        <div class="details">
+                                                            <div>
+                                                                <b
+                                                                    >Account
+                                                                    No:</b
+                                                                >
+                                                                <p>
+                                                                    0053485729104289347
+                                                                </p>
+                                                            </div>
+                                                            <div>
+                                                                <b
+                                                                    >Account
+                                                                    Name:</b
+                                                                >
+                                                                <p>
+                                                                    UHA OMB
+                                                                    Pakistan
+                                                                    (Mezan Bank)
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bank-details">
+                                                        <h3>
+                                                            1. Mezzan Bank
+                                                            Limited
+                                                        </h3>
+                                                        <div class="details">
+                                                            <div>
+                                                                <b
+                                                                    >Account
+                                                                    No:</b
+                                                                >
+                                                                <p>
+                                                                    0053485729104289347
+                                                                </p>
+                                                            </div>
+                                                            <div>
+                                                                <b
+                                                                    >Account
+                                                                    Name:</b
+                                                                >
+                                                                <p>
+                                                                    UHA OMB
+                                                                    Pakistan
+                                                                    (Mezan Bank)
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bank-details">
+                                                        <h3>
+                                                            1. Mezzan Bank
+                                                            Limited
+                                                        </h3>
+                                                        <div class="details">
+                                                            <div>
+                                                                <b
+                                                                    >Account
+                                                                    No:</b
+                                                                >
+                                                                <p>
+                                                                    0053485729104289347
+                                                                </p>
+                                                            </div>
+                                                            <div>
+                                                                <b
+                                                                    >Account
+                                                                    Name:</b
+                                                                >
+                                                                <p>
+                                                                    UHA OMB
+                                                                    Pakistan
+                                                                    (Mezan Bank)
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bank-details">
+                                                        <h3>
+                                                            1. Mezzan Bank
+                                                            Limited
+                                                        </h3>
+                                                        <div class="details">
+                                                            <div>
+                                                                <b
+                                                                    >Account
+                                                                    No:</b
+                                                                >
+                                                                <p>
+                                                                    0053485729104289347
+                                                                </p>
+                                                            </div>
+                                                            <div>
+                                                                <b
+                                                                    >Account
+                                                                    Name:</b
+                                                                >
+                                                                <p>
+                                                                    UHA OMB
+                                                                    Pakistan
+                                                                    (Mezan Bank)
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <label
+                                        for="toggle-not-paid"
+                                        class="close-payment-container"
+                                        >Back</label
+                                    >
+                                </div>
+                            </div>
+                            <!-- <div class="payment-method-container">
+                                <div class="payment-label">
+                                    <div class="label">
+                                        <p>Select the method</p>
+                                        <span>*</span>
+                                    </div>
+                                    <div>Not Paid Yet?</div>
+                                </div>
+                                <div class="payment-methods">
+                                    <div>
+                                        <input
+                                            type="radio"
+                                            id="jazzCash"
+                                            name="payment-method"
+                                            required
+                                            checked
+                                        />
+                                        <label for="jazzCash">
+                                            <span></span>
+                                            <p>JazzCash</p>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input
+                                            type="radio"
+                                            id="easyPaisa"
+                                            name="payment-method"
+                                            required
+                                        />
+                                        <label for="easyPaisa">
+                                            <span></span>
+                                            <p>EasyPaisa</p>
+                                        </label>
+                                    </div>
+
+                                    <div>
+                                        <input
+                                            type="radio"
+                                            id="bank"
+                                            name="payment-method"
+                                            required
+                                        />
+                                        <label for="bank">
+                                            <span></span>
+                                            <p>Bank</p>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="banks-select-container">
+                                <div class="select-label">
+                                    <p>Select the Bank <span>*</span></p>
+                                </div>
+                                <div class="custom-select">
+                                    <div class="close-container"></div>
+                                    <input
+                                        type="checkbox"
+                                        required
+                                        label="Please select a bank here"
+                                    />
+                                    <div class="selected-option">
+                                        <div class="option">Select a Bank</div>
+                                        <i
+                                            class="fa-regular fa-chevron-down"
+                                        ></i>
+                                    </div>
+                                    <div class="options-container">
+                                        <div class="search-input">
+                                            <input
+                                                type="text"
+                                                placeholder="Search Bank"
+                                            />
+                                            <i
+                                                class="fa-solid fa-magnifying-glass"
+                                            ></i>
+                                        </div>
+                                        <ul>
+                                            <li>Meezan Bank Limited</li>
+                                            <li>this is bank name</li>
+                                            <li>this is bank name</li>
+                                            <li>this is bank name</li>
+                                            <li>this is bank name</li>
+                                            <li>this is bank name</li>
+                                            <li>this is bank name</li>
+                                            <li>this is bank name</li>
+                                            <li>this is bank name</li>
+                                            <li>this is bank name</li>
+                                            <li>this is bank name</li>
+                                            <li>this is bank name</li>
+                                            <li>this is bank name</li>
+                                            <li>this is bank name</li>
+                                            <li>this is bank name</li>
+                                            <li>this is bank name</li>
+                                            <li>this is bank name</li>
+                                            <li>this is bank name</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="input-group">
+                                <label for="t-id">
+                                    Transaction ID (T-ID) <span>*</span></label
+                                >
+                                <input
+                                    type="number"
+                                    id="t-id"
+                                    required
+                                    title="Only Number Allowed1"
+                                    placeholder="Enter the T-ID provided when the transaction made"
+                                />
+                            </div>
+                            <div class="input-group">
+                                <label for="senior-id">
+                                    Senior ID (S-ID) <span>*</span></label
+                                >
+                                <input
+                                    type="number"
+                                    id="senior-id"
+                                    required
+                                    title="Only Number Allowed1"
+                                    placeholder="Enter the S-ID provided from your senior"
+                                />
+                            </div>
+                            <button type="submit" class="d-none"></button>
+                        </form>
+                        <form class="form-3">
+                            <h1 class="form-title">Add Google Email</h1>
+                            <div class="input-group">
+                                <label for="email"> Email <span>*</span></label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    required
+                                    placeholder="Enter your email"
+                                />
+                            </div>
+                            <div class="input-group d-none">
+                                <div class="confirm-message">
+                                    We sent a verification code to your email,
+                                    enter it to verify the email.
+                                    <span>Want to change Email?</span>
+                                </div>
+                                <label for="confirm-email">
+                                    Pin Code <span>*</span></label
+                                >
+                                <input
+                                    type="number"
+                                    id="confirm-email"
+                                    placeholder="Enter Pin Code"
+                                />
+                            </div>
+                            <button type="submit" class="d-none"></button>
+                        </form>
+                        <form class="form-4">
+                            <h1 class="form-title">Add Phone Number</h1>
+                            <div class="input-group">
+                                <label for="phoneNumber">
+                                    Phone Number <span>*</span></label
+                                >
+                                <input
+                                    type="number"
+                                    id="phoneNumber"
+                                    required
+                                    placeholder="Enter your phone number 03123456789"
+                                />
+                            </div>
+                            <div class="input-group d-none">
+                                <div class="confirm-message">
+                                    We sent a verification code to your Phone
+                                    Number, enter it to verify the Phone Number.
+                                    <span>Want to change Phone Number?</span>
+                                </div>
+                                <label for="confirm-phoneNumber">
+                                    Pin Code <span>*</span></label
+                                >
+                                <input
+                                    type="number"
+                                    id="confirm-phoneNumber"
+                                    placeholder="Enter the Pincode"
+                                />
+                            </div>
+                            <button type="submit" class="d-none"></button>
+                        </form>
+                        <form class="form-5">
+                            <h1 class="form-title">Secure by Password</h1>
+                            <div class="input-group password-input-group">
+                                <label for="password">
+                                    Create Password <span>*</span></label
+                                >
+                                <input
+                                    type="password"
+                                    id="password"
+                                    required
+                                    placeholder="Create 8+ password"
+                                    title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters. (Please do not use Special Characters)"
+                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                />
+                                <i
+                                    class="fa-regular fa-eye-slash"
+                                    title="Show Password"
+                                ></i>
+                            </div>
+                            <div class="input-group password-input-group">
+                                <label for="confirm-password">
+                                    Last Name <span>*</span></label
+                                >
+                                <input
+                                    type="password"
+                                    id="confirm-password"
+                                    required
+                                    placeholder="Rewrite Password"
+                                    title="Rewrite the password you entered in the above filed"
+                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                />
+                                <i
+                                    class="fa-regular fa-eye-slash"
+                                    title="Show Password"
+                                ></i>
+                            </div>
+                            <button type="submit" class="d-none"></button>
+                        </form>
+                        <div class="welcome-section">
+                            <h1 class="form-title">welcome section</h1>
+                            Thanks for joining UHA, We will help you to earn
+                            online.
+                        </div>
+                    </div>
+
+                    <button class="btn-primary actionBtn" id="actionBtn">
+                        <span>Next</span>
+                        <!-- Add d-none class in the below element to hide it, shown for demo -->
+                        <div class="dot-animation">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </button>
+                </div>
+                <div class="new-user">
+                    Already have an account? <a href="login.html">Login</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script src="JavaScript/signup.js"></script>
+<script src="JavaScript/show-hide-password.js"></script>

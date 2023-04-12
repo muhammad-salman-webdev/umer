@@ -1,0 +1,725 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 15px 0;
+}
+
+.login-container,
+.signup-container {
+    width: 700px;
+    display: flex;
+    box-shadow: 1px 1px 7px -2px grey;
+    border-radius: 10px;
+    /* overflow: hidden; */
+}
+.login-container {
+    overflow: hidden;
+}
+.signup-container {
+    width: 500px;
+}
+.login-container .login-left {
+    background-image: url(../assets/images/login-bg-buildings.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+    color: white;
+}
+.message.success > i.fa-info-circle {
+    display: none;
+}
+.message.error > i.fa-check-circle {
+    display: none;
+}
+.form-title {
+    font-size: 22px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 30px 0;
+    color: var(--primary);
+}
+.login-left .login-info h2 {
+    font-size: 27px;
+    margin: 0 0 15px 0;
+}
+.login-left .login-info p {
+    font-size: 14px;
+    line-height: 1.3;
+}
+.signup-container .signup-left,
+.login-container .login-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 30px;
+}
+
+.signup-container .signup-left {
+    width: 100%;
+}
+.login-right .logo,
+.signup-left .logo {
+    width: 25%;
+}
+
+.login-right .logo img,
+.signup-left .logo img {
+    border-radius: 50%;
+    width: 100%;
+}
+.login-right .mobile-title {
+    display: none;
+}
+
+.login-right .login-form,
+.signup-left .signup-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+/* Navigator */
+.signup-navigator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px 0;
+    position: relative;
+}
+.signup-navigator > div {
+    width: 35px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid;
+    user-select: none;
+    font-weight: 600;
+    color: gray;
+}
+.signup-navigator > div:not(:first-child)::before {
+    content: "";
+    display: block;
+    height: 2px;
+    border-radius: 4px;
+    width: 12.5%;
+    background-color: gray;
+    position: absolute;
+    margin: 0px 23% 0 0;
+}
+.signup-navigator.recovery-navigator > div:not(:first-child)::before {
+    width: 35.5%;
+    margin: 0px 46% 0 0;
+}
+.signup-navigator div i {
+    font-weight: 900;
+    font-size: 20px;
+    display: none;
+}
+/* navigator */
+.signup-navigator.step-1 > div:first-child,
+.signup-navigator.step-2 > div:nth-child(2),
+.signup-navigator.step-3 > div:nth-child(3),
+.signup-navigator.step-4 > div:nth-child(4),
+.signup-navigator.step-5 > div:nth-child(5) {
+    background-color: var(--primary);
+    color: white;
+}
+.signup-navigator.step-1.step-2 > div:first-child span,
+.signup-navigator.step-2.step-3 > div:nth-child(2) span,
+.signup-navigator.step-3.step-4 > div:nth-child(3) span,
+.signup-navigator.step-4.step-5 > div:nth-child(4) span,
+.signup-navigator.step-5.welcome > div:nth-child(5) span,
+.signup-navigator.recovery-navigator.step-3.welcome > div:nth-child(3) span {
+    display: none;
+}
+.signup-navigator.step-1.step-2 > div:first-child i,
+.signup-navigator.step-2.step-3 > div:nth-child(2) i,
+.signup-navigator.step-3.step-4 > div:nth-child(3) i,
+.signup-navigator.step-4.step-5 > div:nth-child(4) i,
+.signup-navigator.step-5.welcome > div:nth-child(5) i,
+.signup-navigator.recovery-navigator.step-3.welcome > div:nth-child(3) i {
+    display: block;
+}
+.signup-navigator.step-1.step-2 > div:first-child,
+.signup-navigator.step-2.step-3 > div:nth-child(2),
+.signup-navigator.step-3.step-4 > div:nth-child(3),
+.signup-navigator.step-4.step-5 > div:nth-child(4),
+.signup-navigator.step-5.welcome > div:nth-child(5),
+.signup-navigator.recovery-navigatorstep-3.welcome > div:nth-child(3) {
+    box-shadow: 0px 0px 5px var(--primary);
+    border-width: 2px;
+}
+.signup-navigator.step-1.step-2 > div:nth-child(2)::before,
+.signup-navigator.step-2.step-3 > div:nth-child(3)::before,
+.signup-navigator.step-3.step-4 > div:nth-child(4)::before,
+.signup-navigator.step-4.step-5 > div:nth-child(5)::before {
+    background-color: var(--primary);
+    height: 3px;
+}
+/* ----- */
+.input-group {
+    margin-top: 10px;
+}
+.input-group input {
+    margin: 5px 00 00 0;
+}
+.login-form .forgot-password {
+    margin: 4px 0 00 0;
+}
+.login-form .forgot-password,
+.new-user a {
+    font-size: 14px;
+    color: var(--primary);
+    width: max-content;
+}
+.forgot-password:hover,
+.new-user a:hover {
+    text-decoration: underline;
+}
+.new-user {
+    color: rgb(37, 37, 37);
+}
+.login-form button {
+    margin: 20px 0 10px 0;
+}
+.signup-form button {
+    margin: 20px 0 10px 0;
+}
+.signup-forms {
+    position: relative;
+}
+.signup-forms.disabled::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.008);
+}
+
+.signup-forms > * {
+    border-radius: 30px;
+    display: none;
+}
+/* ----------- */
+.profile-img-container {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 10px 0;
+}
+
+.profile-img-container > div > .photo-actions {
+    color: red;
+    margin: 5px 0 0 0;
+}
+.profile-img-container > div > .photo-actions div {
+    color: red;
+}
+.profile-img-container > div > .photo-actions .change-photo {
+    color: var(--primary);
+}
+.profile-img-container > div > .photo-actions :hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.profile-img-container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-img-container .preview {
+    width: 150px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    position: relative;
+    /* background-color: var(--primary); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* opacity: 0.4; */
+    box-shadow: 0px 0px 5px 0px grey;
+}
+/*  */
+.profile-img-container .preview > div.img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: absolute;
+    background-color: var(--primary);
+    display: block;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.profile-img-container .preview > input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-color: pink;
+    opacity: 0.5;
+}
+.profile-img-container .preview > label {
+    position: absolute;
+    border-radius: 50%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: rgba(37, 37, 37, 0);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.profile-img-container .preview > label:hover {
+    background-color: rgba(37, 37, 37, 0.363);
+}
+.profile-img-container .preview > label:hover i {
+    opacity: 1;
+    transform: translateY(0);
+}
+.profile-img-container .preview > label i {
+    font-size: 25px;
+    transform: translateY(-150%);
+    opacity: 0;
+}
+/* ------------- */
+.signup-forms.step-1 > .form-1,
+.signup-forms.step-2 > .form-2,
+.signup-forms.step-3 > .form-3,
+.signup-forms.step-4 > .form-4,
+.signup-forms.step-5 > .form-5,
+.signup-forms.step-5.welcome .welcome-section,
+.signup-forms.step-3.welcome > .welcome-section {
+    display: block;
+}
+.signup-forms.step-1.step-2 > .form-1,
+.signup-forms.step-2.step-3 > .form-2,
+.signup-forms.step-3.step-4 > .form-3,
+.signup-forms.step-4.step-5 > .form-4,
+.signup-forms.step-5.welcome > .form-5,
+.signup-forms.step-3.welcome > .form-3 {
+    display: none;
+}
+
+button.actionBtn > div,
+.login-form button[type="submit"] > div {
+    display: none;
+}
+button.actionBtn:disabled,
+button.actionBtn:disabled:hover,
+.login-form button[type="submit"]:disabled,
+.login-form button[type="submit"]:disabled:hover {
+    cursor: not-allowed;
+    background-color: var(--primary) !important;
+}
+.login-form button[type="submit"]:disabled > div > div,
+.login-form button[type="submit"]:disabled:hover > div > div,
+button.actionBtn:disabled > div > div,
+button.actionBtn:disabled:hover > div > div {
+    background-color: white;
+}
+button.actionBtn:disabled > span,
+.login-form button[type="submit"]:disabled > span {
+    display: none;
+}
+.login-form button[type="submit"]:disabled > div,
+button.actionBtn:disabled > div {
+    display: flex;
+}
+/* -------------------------- */
+.custom-radio-container {
+    margin: 10px 0 0;
+}
+.custom-radio-container > div > p > span {
+    color: var(--primary);
+}
+.radio-types {
+    margin: 5px 0 0;
+    display: flex;
+    /* justify-content: space-between; */
+    column-gap: 10px;
+}
+.radio-types > div > input {
+    position: absolute;
+    display: none;
+}
+.radio-types > div > label {
+    padding: 5px 10px;
+    box-shadow: 0px 0px 1px grey;
+    border-radius: var(--border-radius);
+    display: flex;
+    user-select: none;
+    color: #757575;
+    align-items: center;
+    height: var(--btn-height);
+}
+.radio-types > div > label:hover {
+    cursor: pointer;
+    border-color: var(--primary);
+}
+.radio-types > div > label span {
+    aspect-ratio: 1/1;
+    width: 18px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    position: relative;
+    margin: 1px 5px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.radio-types > div > label span::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    aspect-ratio: 1/1;
+    background: var(--primary);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: all 0.3s ease;
+}
+.radio-types > div:has(input:checked) > label {
+    background-color: var(--primary);
+    color: white;
+    box-shadow: 0px 0px 1px var(--primary);
+}
+.radio-types > div:has(input:checked) > label span {
+    background-color: white;
+}
+.radio-types > div:has(input:checked) > label span::before {
+    opacity: 1;
+    transform: scale(0.7);
+}
+.payment-label > div.label {
+    display: flex;
+    cursor: default;
+}
+.payment-label > div.label span {
+    color: var(--primary);
+    margin: 0 0 0 5px;
+}
+.payment-label {
+    display: flex;
+    justify-content: space-between;
+}
+.banks-select-container {
+    display: none;
+}
+.banks-select-container > div {
+    margin: 0 00 5px 0;
+}
+.banks-select-container > div > p {
+    color: var(--label-color);
+    /* background-color: red; */
+}
+.form-2 .payment-warning {
+    color: #ff6e00;
+    border: 1px solid #ff6e00;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    margin: 0 0 30px 0;
+}
+.form-2 .payment-warning i {
+    font-size: 25px;
+    margin: 0 10px 0 0;
+}
+.not-paid-layout {
+    /* background-color: red; */
+    display: flex;
+    justify-content: right;
+    position: relative;
+}
+.not-paid-layout .not-paid-container {
+    box-shadow: 01px 0px 7px -2px grey;
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    min-height: 395px;
+    overflow-y: scroll;
+    margin: -100px 0 0;
+    border-radius: 10px;
+    flex-direction: column;
+
+    display: none;
+}
+.not-paid-layout .not-paid-container::-webkit-scrollbar {
+    width: 0;
+}
+.not-paid-layout:has(input#toggle-not-paid:checked) .not-paid-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.not-paid-layout:has(input#toggle-not-paid:checked) label.not-paid-overlay {
+    display: block;
+}
+.not-paid-layout label.not-paid-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+.not-paid-layout > label.open-container {
+    background: white;
+    height: var(--btn-height);
+    border: 2px solid var(--primary);
+    border-radius: var(--border-radius);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    cursor: pointer;
+}
+.not-paid-layout > label.open-container:hover {
+    background-color: var(--primary);
+    color: white;
+}
+.not-paid-container > div {
+    width: 100%;
+}
+.not-paid-container .paid-nav {
+    display: flex;
+    justify-content: stretch;
+    border-bottom: 2px solid var(--primary);
+}
+.not-paid-container .paid-nav > div {
+    width: 33.3333333%;
+}
+.not-paid-container .paid-nav > div > input {
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+}
+.not-paid-container .paid-nav > div > label {
+    background: white;
+    color: black;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    height: var(--btn-height);
+    display: flex;
+}
+.not-paid-container .paid-nav > div:not(:last-child) {
+    border-right: 2px solid var(--primary);
+}
+.paid-cote-container .payment-category {
+    /* background-color: red; */
+    padding: 10px;
+    display: none;
+}
+.payment-category .banks-container {
+    /* background-color: red; */
+    max-height: 290px;
+    overflow-y: scroll;
+    padding: 0 5px 0 0;
+}
+
+.payment-category .banks-container .bank-details {
+    /* background-color: green; */
+    padding: 10px;
+}
+.payment-category .banks-container .bank-details:nth-of-type(odd) {
+    background-color: #e6e5e58f;
+    border-radius: 10px;
+}
+.banks-container .bank-details .details {
+    /* background: pink; */
+    display: flex;
+    flex-direction: column;
+}
+.bank-details .details {
+    /* display: flex; */
+    /* border-bottom: 1px solid gray; */
+}
+.bank-details .details > div {
+    display: flex;
+    padding: 4px 0 0px;
+    /* background-color: red; */
+    position: relative;
+    /* border-bottom: 1px solid gray; */
+}
+.bank-details .details div b {
+    width: 30%;
+}
+.paid-cote-container .payment-category {
+    flex-direction: column;
+}
+.payment-category .qr-code-img {
+    width: 35%;
+    display: flex;
+    margin: 0 auto 0px;
+    flex-direction: column;
+}
+.payment-category .qr-code-img span {
+    margin: 5px 0 0px 0;
+    text-align: center;
+}
+.payment-category > .other-details {
+    display: flex;
+    flex-direction: column;
+}
+.payment-category > .other-details .detail {
+    display: flex;
+    /* background-color: red; */
+    padding: 10px 10px;
+    border-radius: 3px;
+}
+.payment-category > .other-details .detail:nth-of-type(odd) {
+    background-color: #e6e5e58f;
+}
+.payment-category > .other-details .detail:not(:last-child) {
+    /* border-bottom: 1px solid gray; */
+}
+.payment-category > .other-details .detail b {
+    width: 30%;
+    /* background-color: green; */
+}
+.qr-code-img img {
+    width: 100%;
+}
+.not-paid-container > div .paid-nav > div:has(input:checked) label {
+    background-color: var(--primary);
+    color: white;
+}
+.not-paid-container
+    > div:has(.paid-nav > div > input#jazzcash-section:checked)
+    .paid-cote-container
+    > div.payment-category.jazzcash,
+.not-paid-container
+    > div:has(.paid-nav > div > input#easypaisa-section:checked)
+    .paid-cote-container
+    > div.payment-category.easypaisa,
+.not-paid-container
+    > div:has(.paid-nav > div > input#banks-section:checked)
+    .paid-cote-container
+    > div.payment-category.banks {
+    display: flex;
+}
+.not-paid-container label.close-payment-container {
+    margin: 0 0 5px 5px;
+    padding: 0px 20px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    border-radius: var(--border-radius);
+    height: var(--btn-height);
+    border: 2px solid var(--primary);
+    /* width: max-content; */
+    background-color: white;
+}
+.not-paid-container label.close-payment-container:hover {
+    cursor: pointer;
+    color: white;
+    background-color: var(--primary);
+}
+.input-group .confirm-message {
+    border: none;
+    padding: 0;
+    /* background-color: red; */
+    margin: 5px 0 10px;
+}
+.input-group .confirm-message span {
+    color: var(--primary);
+    cursor: pointer;
+}
+.input-group .confirm-message span:hover {
+    text-decoration: underline;
+}
+/* media queries */
+@media screen and (max-width: 750px) {
+    .login-container {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 640px) {
+    .login-container .login-left {
+        display: none;
+    }
+    .login-container .login-right {
+        width: 100%;
+    }
+    .login-right .mobile-title {
+        display: block;
+        margin: 3px 0 10px 0;
+
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 350px) {
+    .message {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .signup-container {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .radio-types > div > label {
+        width: 100%;
+    }
+    .radio-types {
+        flex-direction: column;
+    }
+    .radio-types > div > label:last-child {
+        margin: 10px 0 000;
+    }
+    .signup-navigator > div:not(:first-child)::before {
+        width: 10%;
+        margin: 0px 22.5% 0 0;
+    }
+    .signup-navigator.recovery-navigator > div:not(:first-child)::before {
+        width: 31%;
+        margin: 0px 45.5% 0 0;
+    }
+    .bank-details .details > div {
+        flex-direction: column;
+    }
+    .bank-details .details div b {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 350px) {
+    .signup-navigator > div:not(:first-child)::before {
+        width: 7%;
+        margin: 0px 21.5% 0 0;
+    }
+    .payment-category > .other-details .detail {
+        flex-direction: column;
+    }
+    .payment-category > .other-details .detail b {
+        width: 100%;
+    }
+    .signup-navigator.recovery-navigator > div:not(:first-child)::before {
+        width: 27%;
+        margin: 0px 44.5% 0 0;
+    }
+}
